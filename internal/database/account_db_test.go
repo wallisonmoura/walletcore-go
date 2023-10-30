@@ -20,7 +20,7 @@ func (s *AccountDBTestSuite) SetupSuite() {
 	s.Nil(err)
 	s.db = db
 	db.Exec("Create table clients (id varchar(255), name varchar(255), email varchar(255), created_at date)")
-	db.Exec("Create table accounts (id varchar(255), client_id varchar(255), balance float, created_at date)")
+	db.Exec("Create table accounts (id varchar(255), client_id varchar(255), balance int, created_at date)")
 	s.accountDB = NewAccountDB(db)
 	s.client, _ = entity.NewClient("John", "j@j.com")
 }
